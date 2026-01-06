@@ -1,0 +1,21 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pip install -r requirements.txt"
+
+[deploy]
+startCommand = "python bot.py"
+healthcheckPath = "/health"
+healthcheckTimeout = 60
+
+[env]
+PORT = "8080"
+BOT_TOKEN.required = true
+DEEPSEEK_API_KEY.required = true
+
+[[env]]
+name = "PYTHON_VERSION"
+value = "3.11.0"
+
+[[env]]
+name = "NIXPACKS_1"
+value = "true"
